@@ -3,21 +3,23 @@
 // [5, 18, 123, 6, 2] -> 1
 // [1, 2, 3, 6, 2] -> 0
 // [10, 11, 12, 13, 14] -> 5
-void ChislaVMassive(int M,int B, int []array ){
-    int check =0;
-for(int i = 0; i < array.Length; i++)
+void ChislaVMassive(int M, int B, int[] array)
 {
+    int check = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
 
-    
 
-    if (array[i]>M && array[i]<B){
-        check++;
+
+        if (array[i] > M && array[i] < B)
+        {
+            check++;
+        }
     }
-}
 
-if (check>0)
-{Console.Write($"Массив содержит числа от {M} до {B}  - {check} раз (а)");}
-else {Console.Write("Массив НЕ содержит таких чисел");}
+    if (check > 0)
+    { Console.Write($"Массив содержит числа от {M} до {B}  - {check} раз (а)"); }
+    else { Console.Write($"Массив НЕ содержит содержит числа от {M} до {B}"); }
 }
 
 
@@ -25,9 +27,9 @@ else {Console.Write("Массив НЕ содержит таких чисел");
 int[] FillArray(int size)
 {
     int[] arr = new int[size];
-    for(int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(-1000,1000);
+        arr[i] = new Random().Next(-1000, 1000);
     }
     return arr;
 }
@@ -36,11 +38,11 @@ int[] FillArray(int size)
 Console.Write("Введите длину массива: ");
 int num = Convert.ToInt32(Console.ReadLine());
 int[] array = FillArray(num);
-Console.WriteLine("Ваш массив:"+ string.Join(" ",array));
+Console.WriteLine("Ваш массив:" + string.Join(" ", array));
 
 Console.WriteLine("Введите минимальное число (в задании 10): ");
 int M = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите максимально число (в задании 99): ");
 int B = Convert.ToInt32(Console.ReadLine());
 
-ChislaVMassive(M,B,array);
+ChislaVMassive(M, B, array);
